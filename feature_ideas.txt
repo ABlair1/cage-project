@@ -1,0 +1,16 @@
+Overall: Nic Cage website w/ user likes 
+
+
+1) Have a locally running Django project w/ "Hello World"
+
+2a) Design very simple database schema
+	* Nic Cage movies
+	* Users
+
+2b) Add user interaction into application (login, like movie)
+	* At this point just display list of movies
+
+	* Page or section per movie w comments, likes, ratings, tags
+	* Cage Performance Rating
+
+3) Future updates: Pull from IMDB API -> set up batch + storage job 
