@@ -14,5 +14,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(seed_db)
+        # migrations.RunPython(seed_db)
     ]
