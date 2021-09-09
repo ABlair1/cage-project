@@ -12,9 +12,8 @@ for movie in nic['filmography']['actor']:
     id = movie.movieID
 
     # Retrieve movie data 
-    current = ia.get_movie('9624766')
+    current = ia.get_movie(id)
     ia.update(current, info=['main', 'plot', 'vote details'])
-    # print(current.infoset2keys)
     cast_i = 0
     while str(current['cast'][cast_i]) != 'Nicolas Cage':
         cast_i += 1
@@ -25,12 +24,20 @@ for movie in nic['filmography']['actor']:
     coverURL = current.get('cover url', 'TBA')
     plot = current.get('plot', 'TBA')
     runtime = current.get('runtimes', 'TBA')
-    imdb_rating = current.get('arithmetic mean', 'None')
+    imdb_rating = str(current.get('arithmetic mean', 'None'))
 
+    # Adjust runtime based on current being a movie or series
     if runtime != 'TBA':
         if 'movie' in str(current['kind']).lower():
             runtime = runtime[0] + ' minutes'
         else:
             runtime = 'Varies by episode'
 
-    print("id: ", '9624766', ", title: ", title, ", year: ", year, ", runtime: ", runtime, ", role: ", role)
+    # Get first plot description from plot list
+    if plot != 'TBA':
+        plot = str(plot[0])
+
+    print("id: ", id, ", title: ", title, ", year: ", year, ", runtime: ", runtime, 
+        ", role: ", role, "imdb_rating: ", imdb_rating)
+    print("coverURL: ", coverURL)
+    print("plot: ", plot)

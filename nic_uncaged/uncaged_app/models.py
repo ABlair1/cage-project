@@ -4,7 +4,7 @@ from django.db import models
 class Filmography(models.Model):
     imdb_id = models.CharField(max_length=20, null=True)
     title = models.CharField(max_length=100, null=True)
-    year = models.SmallIntegerField(null=True)
+    year = models.CharField(max_length=10, null=True)
     role = models.CharField(max_length=100, null=True)
     likes = models.IntegerField(default=0, null=True)
     page_link = models.URLField(null=True)
