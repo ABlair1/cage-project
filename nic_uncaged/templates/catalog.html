@@ -4,12 +4,14 @@
 {% block content %}
 
 <div class="container">
-    <h2>The Nicolas Cage Movie Catalog</h2>
-    <div class="list-group list-group-flush">
-        {% for movie in films %}
-            <a href="entry/{{movie.pk}}" class="list-group-item list-group-item-action">{{ movie.title }} ({{ movie.year }})</a>
-        {% endfor %}
-    </div>
+    <p>
+        <h1>The Nicolas Cage Movie Catalog</h1>
+        <div class="list-group list-group-flush">
+            {% for movie in films %}
+                <a href="entry/{{movie.pk}}" class="list-group-item list-group-item-action">{{ movie.title }} ({{ movie.year }})</a>
+            {% endfor %}
+        </div>
+    </p>
 </div>
 
 {% endblock %}

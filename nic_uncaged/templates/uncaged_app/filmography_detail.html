@@ -3,8 +3,52 @@
 {% block content %}
 
 <div class="container">
-    <h2>{{ object.title }}</h2>
-    
+    <div class="row">
+        <div class="col">
+            <p>
+                <h1>{{ object.title }}</h1>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                {{ object.year }} | {{ object.runtime }}
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                UnCaged Likes: {{ object.likes }}
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                UnCaged Rating: {{ object.uncaged_rating }}
+            </p>
+        </div>
+        <div class="col-md-2">
+            <p>
+                IMDb Rating: {{ object.imdb_rating }}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <p>
+                <img src="{{ object.cover_url }}" class="img-thumbnail rounded float-start" alt="Cover image for {{ object.title }}">
+            </p>
+        </div>
+        <div class="col-md-8">
+            <p>
+                <strong>Plot Summary:</strong>
+                {{ object.plot }}
+            </p>
+            <p>
+                <strong>Nic Cage as:</strong>
+                {{ object.role }}
+            </p>
+        </div>
+    </div>
 </div>
 
 {% endblock %}
